@@ -1,0 +1,60 @@
+Subway/
+│
+├── classes/
+│   ├── __pycache__/
+│   ├── CityGrowth.py
+│   ├── MetroCity.py
+│   ├── USCity.py
+│   └── WorldCity.py
+│
+├── database/
+│   ├── __pycache__/
+│   ├── create_db.py
+│   └── database_functions/
+│       ├── __init__.py
+│       ├── city_growth.py
+│       ├── connection.py
+│       ├── file_path.py
+│       ├── json_files.py
+│       ├── metro_systems.py
+│       ├── tables.py
+│       ├── us_cities.py
+│       ├── us_class_table.py
+│       ├── world_cities.py
+│       └── world_class_table.py
+│
+├── files/
+│   ├── city_data.db
+│   ├── growth.json
+│   ├── metro_systems.json
+│   ├── us_cities.json
+│   └── world_cities.json
+│
+├──functions/
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── add_us_city.py
+│   ├── add_world_city.py
+│   ├── create_connection.py
+│   ├── decision_tree.py
+│   ├── get_city_averages.py
+│   ├── get_file_path.py
+│   ├── get_growth_data.py
+│   ├── get_metro_data.py
+│   ├── get_min_max_values.py
+│   ├── get_next_id.py
+│   ├── get_search_city
+│   ├── get_table_count.py
+│   ├── get_us_city_data.py
+│   ├── get_world_city_data.py
+│   ├── imports.py
+│   ├── normalize_data.py
+│   ├── 
+│   ├── 
+│   ├── 
+│   ├── 
+│   └── read_json.py
+│
+└── main.py
+
+read_json
