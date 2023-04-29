@@ -11,6 +11,7 @@ This module contains the function get_next_id() that returns the next available 
 
 """
 
+
 def get_next_id(conn, city_name, state=None):
     """
     Function to find the next available id for a city.
@@ -26,7 +27,7 @@ def get_next_id(conn, city_name, state=None):
     # Loop through the table names
     for table in tables:
         # Check if the current table has a 'state' column
-        if table == 'us_city_class' :
+        if table == 'us_city_class':
             # If found, query the id using 'name' column and 'state' column
             query = f'SELECT id FROM {table} WHERE name = ? AND state = ?'
             cursor.execute(query, (city_name, state))
@@ -41,19 +42,19 @@ def get_next_id(conn, city_name, state=None):
             # Query the id using 'name' column for 'world_cities' table
             else:
                 query = f'SELECT id FROM {table} WHERE name = ?'
-            cursor.execute(query, (city_name,))
+            cursor.execute(query, (city_name, ))
 
         # Fetch the result of the query
         result = cursor.fetchone()
 
         # If there's a result, return the id
-        if result:
-            return result[0]
-        else:
-            # If not, collect all ids from the current table
-            query = f'SELECT id FROM {table}'
-            cursor.execute(query)
-            ids.extend([record[0] for record in cursor.fetchall()])
+        #if result:
+            #return result[0]
+        #else:
+            #If not, collect all ids from the current table
+        query = f'SELECT id FROM {table}'
+        cursor.execute(query)
+        ids.extend([record[0] for record in cursor.fetchall()])
 
     # Remove duplicates, sort the list, and check for gaps
     sorted_ids = sorted(list(set(ids)))

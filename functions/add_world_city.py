@@ -5,9 +5,14 @@ new WorldCity and adds it to the database.
 
 import sqlite3
 from classes.WorldCity import WorldCity
+from functions.get_new_city_name import get_new_city_name
+from functions.get_new_country import get_new_country
+from functions.get_new_pop import get_new_pop
+from functions.get_new_area import get_new_area
+from functions.get_new_growth import get_new_growth
 from functions.get_next_id import get_next_id
 
-def add_world_city(conn):
+def add_world_city(conn, city_list):
     """
      Prompts the user for information about a new WorldCity and adds it to the database.
 
@@ -18,38 +23,35 @@ def add_world_city(conn):
             new_city (WorldCity): An instance of the WorldCity class
     """
 
+    bad_chars = ('?', '!', '/', '\\', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+                  '+', '=', '~', '`', '[', ']', '{', '}', '|', '<', '>', ',', '.', ';', ':', '"')
+
+    is_new_city = False
+
+
     # get city information from the user
-    name = input("Enter the name of the city: ")
+    while not is_new_city:
+        name = get_new_city_name()
+        
+        if name.lower() == 'cancel':
+            return None
+        
+        country = get_new_country()
 
-    while True:
-        try:
-            pop = int(input("Enter the population of the city: "))
-            break
-        except ValueError:
-            print("Invalid input. Population must be an integer value.\n")
+         # check if the city is already in the database
+        for city in city_list:
+            if city.name.lower() == name.lower() and city.country.lower() == country.lower():
+                print('This city is already in the database.')
+                is_new_city = False
+                break
+            is_new_city = True
 
-    while True:
-        try:
-            area = float(input("Enter the area of the city in kilometers squared: "))
-            break
-        except ValueError:
-            print("Invalid input. Area must be a numeric value (e.g. 123 or 123.4).\n")
+    pop = get_new_pop()
+    area = get_new_area()
 
     density = area / pop
 
-    while True:
-        try:
-            growth = float(input("Enter the growth rate of the city (ex: 1% is .01): "))
-            break
-        except ValueError:
-            print("Invalid input. Area must be a numeric value (e.g. 123 or 123.4).\n")
-
-    while True:
-        country = input("Enter the full name country of the city: ")
-        if not country.isalpha():
-            print("Invalid input. Country must be alpha characters.\n")
-        else:
-            break
+    growth = get_new_growth()
     id_num = get_next_id(conn, name)
 
     # create a tuple of WorldCity to insert into the database

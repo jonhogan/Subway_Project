@@ -19,3 +19,6 @@ from functions.get_us_city_data import get_us_city_data
 from functions.get_world_city_data import get_world_city_data
 from functions.read_json import read_json
 from functions.get_min_max_values import get_min_max_values
+from functions.get_user_choice import get_user_choice
+from functions.get_lookup_city import get_lookup_city
+from functions.get_add_city import get_add_city

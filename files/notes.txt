@@ -12,16 +12,16 @@ Subway/
 │   ├── create_db.py
 │   └── database_functions/
 │       ├── __init__.py
-│       ├── city_growth.py
-│       ├── connection.py
-│       ├── file_path.py
-│       ├── json_files.py
-│       ├── metro_systems.py
-│       ├── tables.py
-│       ├── us_cities.py
-│       ├── us_class_table.py
-│       ├── world_cities.py
-│       └── world_class_table.py
+│       ├── create_connection.py
+│       ├── create_table.py
+│       ├── create_us_city_class_table.py
+│       ├── create_world_city_class_table.py
+│       ├── get_file_path.py
+│       ├── insert_growth.py
+│       ├── insert_metro_systems.py
+│       ├── insert_us_cities.py
+│       ├── insert_world_cities.py
+│       └── read_json.py
 │
 ├── files/
 │   ├── city_data.db
@@ -37,22 +37,25 @@ Subway/
 │   ├── add_world_city.py
 │   ├── create_connection.py
 │   ├── decision_tree.py
+│   ├── get_add_city.py
 │   ├── get_city_averages.py
 │   ├── get_file_path.py
 │   ├── get_growth_data.py
+|   ├── get_lookup_city.py
 │   ├── get_metro_data.py
 │   ├── get_min_max_values.py
+│   ├── get_new_area.py
+|   ├── get_new_city_name.py
+│   ├── get_new_country.py
+│   ├── get_new_growth.py
+│   ├── get_new_pop.py
+│   ├── get_new_state_name.py
 │   ├── get_next_id.py
-│   ├── get_search_city
 │   ├── get_table_count.py
 │   ├── get_us_city_data.py
 │   ├── get_world_city_data.py
 │   ├── imports.py
 │   ├── normalize_data.py
-│   ├── 
-│   ├── 
-│   ├── 
-│   ├── 
 │   └── read_json.py
 │
 └── main.py
