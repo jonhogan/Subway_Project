@@ -1,5 +1,22 @@
+"""
+This module will create the us_city_class table for the city_data.db file.
+
+    Functions:
+        create_us_city_class_table: Creates the us_city_class table.
+        insert_us_city_class_data: Inserts data into the us_city_class table.
+
+    Parameters:
+        conn: Connection object to the database
+
+    Returns:
+        None
+"""
+
 def create_us_city_class_table(conn):
-    # create the us_city_class table
+    """
+    Function to create the us_city_class table
+    """
+
     create_table_query = """
         CREATE TABLE IF NOT EXISTS us_city_class (
             id INTEGER PRIMARY KEY,
@@ -20,7 +37,11 @@ def create_us_city_class_table(conn):
 
 def insert_us_city_class_data(conn):
     """
-    query us_cities, growth, and metro_systems tables and insert the data into the us_city_class table
+    Function to insert data into the us_city_class table
+    """
+    """
+    query us_cities, growth, and metro_systems tables and
+    insert the data into the us_city_class table
     
     id, name, state, population and area from us_cities
     calculate population_density from us_cities

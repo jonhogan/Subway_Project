@@ -1,6 +1,20 @@
-#world_class_table.py
+"""
+This module will create the world_city_class table for the city_data.db file.
+
+    Functions:
+        create_world_city_class_table: Creates the world_city_class table.
+        insert_world_city_class_data: Inserts data into the world_city_class table.
+
+    Parameters:
+        conn: Connection object to the database
+
+    Returns:
+        None
+"""
 def create_world_city_class_table(conn):
-    # create the world_city_class table
+    """
+    Function to create the world_city_class table
+    """
     create_table_query = """
         CREATE TABLE IF NOT EXISTS world_city_class (
             id INTEGER PRIMARY KEY,
@@ -22,7 +36,11 @@ def create_world_city_class_table(conn):
 
 def insert_world_city_class_data(conn):
     """
-    query world_cities, growth, and metro_systems tables and insert the data into the world_city_class table
+    Function to insert data into the world_city_class table
+    """
+    """
+    query world_cities, growth, and metro_systems tables and
+    insert the data into the world_city_class table
     
     id, name, name2, country, population and area from world_cities
     calculate population_density from world_cities
@@ -63,3 +81,4 @@ def insert_world_city_class_data(conn):
     cursor.execute(insert_data_query)
     conn.commit()
     print('Inserting data into world_city_class table...')
+    

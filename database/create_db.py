@@ -1,3 +1,12 @@
+"""
+This module will create the database and tables for the city_data.db file.
+It is only run is the city_data.db file does not exist.
+
+Functions:
+    main: Creates the database and tables and populates the tables with data from JSON files.
+
+"""
+
 import sys
 import os
 
@@ -16,8 +25,10 @@ from database.database_functions.create_world_city_class_table import create_wor
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
-# main function to create the database and tables
 def main():
+    """
+    Main function to create the database and tables
+    """
     database = get_file_path("city_data.db")
 
     # create the tables

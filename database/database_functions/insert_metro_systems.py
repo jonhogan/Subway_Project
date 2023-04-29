@@ -1,7 +1,20 @@
+"""
+This module contains the function to insert data into the metro_systems table of
+the database
+
+    Parameters:
+        conn (sqlite3.Connection): A connection to the database
+        metro_systems_data (list): A list of dictionaries containing the data to be inserted
+
+    Returns:
+        None
+"""
 import sqlite3
 
-# functions to insert data into the metro_systems_data table
 def insert_metro_systems(conn, metro_systems_data):
+    """
+    Functions to insert data into the metro_systems_data table
+    """
     query = """INSERT INTO metro_systems (
                     id, city, country_region, name, service_opened, last_expanded, stations, system_length,
                     annual_ridership, rail_type

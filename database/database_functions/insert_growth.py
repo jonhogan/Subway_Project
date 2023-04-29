@@ -1,5 +1,5 @@
 """
-This module contains the funtion to insert data into the growth table of
+This module contains the function to insert data into the growth table of
 the database
 
     Parameters:
@@ -10,6 +10,10 @@ the database
 import sqlite3
 
 def insert_growth(conn, growth_data):
+    """
+    Insert data into the growth table of the database
+    """
+
     query = """INSERT INTO growth (
                    id, pop2023, pop2022, city, country, growthRate, type, rank, state
                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"""

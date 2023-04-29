@@ -1,7 +1,21 @@
+"""
+This module contains the function to insert data into the us_cities table of
+the database
+
+    Parameters:
+        conn (sqlite3.Connection): A connection to the database
+        us_cities_data (list): A list of dictionaries containing the data to be inserted
+
+    Returns:
+        None
+"""
+
 import sqlite3
 
-# functions to insert data into the us_cities_data table
 def insert_us_cities(conn, us_cities_data):
+    """
+    Function to insert data into the us_cities_data table
+    """
     query = """
         INSERT INTO us_cities (id, name, country, state, countryCode, latitude, longitude, population, area)
         VALUES (:id, :name, :country, :state, :countryCode, :latitude, :longitude, :population, :area)
