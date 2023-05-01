@@ -59,5 +59,3 @@ Subway/
 │   └── read_json.py
 │
 └── main.py
-
-read_json

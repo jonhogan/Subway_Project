@@ -53,5 +53,5 @@ class WorldCity(CityClass):
         String representation of the WorldCity class
         """
         return f'ID: {self.id}\nName: {self.name}\nName2: {self.name2}\ncountry: {self.country}\nPopulation: {self.population}'\
-                      + f'\nArea: {self.area}\nPopulation Density: {self.population_density}\nGrowth Rate: {self.growth_rate}'\
+                      + f'\nArea: {self.area}\nPopulation Density: {self.population_density: .1f}\nGrowth Rate: {self.growth_rate}'\
                       + f'\nRail Type: {self.rail_type}'

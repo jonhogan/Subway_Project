@@ -47,11 +47,7 @@ def get_next_id(conn, city_name, state=None):
         # Fetch the result of the query
         result = cursor.fetchone()
 
-        # If there's a result, return the id
-        #if result:
-            #return result[0]
-        #else:
-            #If not, collect all ids from the current table
+        #If not, collect all ids from the current table
         query = f'SELECT id FROM {table}'
         cursor.execute(query)
         ids.extend([record[0] for record in cursor.fetchall()])

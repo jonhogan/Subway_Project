@@ -86,6 +86,7 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
                         print('Invalid input, population should be numeric')
                     else:
                         temp_city.population = int(temp_pop)
+                        temp_city.population_density = temp_city.population / temp_city.area
                         break
 
                 results = decision_tree(temp_city, us_min_max)

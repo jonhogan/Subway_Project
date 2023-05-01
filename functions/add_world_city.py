@@ -23,9 +23,6 @@ def add_world_city(conn, city_list):
             new_city (WorldCity): An instance of the WorldCity class
     """
 
-    bad_chars = ('?', '!', '/', '\\', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
-                  '+', '=', '~', '`', '[', ']', '{', '}', '|', '<', '>', ',', '.', ';', ':', '"')
-
     is_new_city = False
 
 

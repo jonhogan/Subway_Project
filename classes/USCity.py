@@ -53,5 +53,5 @@ class USCity(CityClass):
         String representation of the USCity class.
         """
         return f'ID: {self.id}\nName: {self.name}\nState: {self.state}\nCountry: {self.country}\
-                \nPopulation: {self.population}\nArea: {self.area}\nPopulation Density: {self.population_density}\
+                \nPopulation: {self.population}\nArea: {self.area}\nPopulation Density: {self.population_density: .1f}\
                 \nGrowth Rate: {self.growth_rate}\nRail Type: {self.rail_type}'

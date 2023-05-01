@@ -10,18 +10,11 @@ SubTerrain City Recommender is a city evaluation and recommendation tool that he
 ## Installation
 
 1. Clone the repository or download the source code.
-2. Install the required dependencies: pip install -r requirements.txt (not yet created)
+2. Install the required dependencies:
+   1. pip install tk (tkinter package)
 3. Run the `main.py` script
 
 ## Usage
 
 1. Input city data by selecting a city from a pre-populated list or adding a new city. Edit the data using text boxes, dropdown menus, slider bars, or wheels.
 2. Analyze the suitability of a city for building a subway system. The application will rank the city based on predefined factors and display the results on a scale (e.g., 1-10, stars).
-
-## License
-
-~~This project is licensed under the [MIT License](LICENSE).~~
-
-## Support
-
-For any questions or concerns, please reach out to the development team.
