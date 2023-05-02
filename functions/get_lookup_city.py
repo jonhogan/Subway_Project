@@ -11,8 +11,8 @@ This module contains a function to look up a city in the database and display th
         None
 """
 
-
 from functions.decision_tree import decision_tree
+
 
 def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
     temp_city = None
@@ -29,7 +29,8 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
         elif look_up_city == "Washington":
             while True:
                 answer = input(
-                        'Are you wanting to search for Washington, D.C.?: ').lower()
+                    'Are you wanting to search for Washington, D.C.?: ').lower(
+                    )
 
                 if answer in ('y', 'yes'):
                     look_up_city = "Washington, D.C."
@@ -42,12 +43,27 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
         else:
             break
 
+    while True:
+        # Well be used to store a state or country name to account
+        # for different cities with the same name
+        print('\nIf the city is in the US, enter state.\
+        \nIf outside of the US, enter country name.\n')
+        look_up_state = input(
+            'Enter the name of the state or country the city is in: ')
+
+        if look_up_state.isdigit():
+            print('Invalid input. Names should be alpha only')
+        else:
+            break
+
     city_found = False
     results = ''
     # Look up the city in the US city list
     for city in us_city_list:
         lower_city = city.name.lower()
-        if look_up_city.lower() == lower_city:
+        lower_state = city.state.lower()
+        if look_up_city.lower() == lower_city and look_up_state.lower(
+        ) == lower_state:
             temp_city = city
             results = decision_tree(city, us_min_max)
             city_found = True
@@ -58,8 +74,9 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
         for city in world_city_list:
             lower_city = city.name.lower()
             lower_city2 = city.name2.lower()
-            if look_up_city.lower() == lower_city or look_up_city.lower(
-            ) == lower_city2:
+            lower_country = city.country.lower()
+            if (look_up_city.lower() == lower_city or look_up_city.lower()
+                    == lower_city2) and look_up_state.lower() == lower_country:
                 temp_city = city
                 results = decision_tree(city, world_min_max)
                 city_found = True
@@ -70,13 +87,14 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
     if not city_found:
         print(
             'The city was not found in the database, you should think about adding it.'
-             )
+        )
     else:
         # Let the user try different population values
         while True:
             # Get temp data to test the city with a different population
             response = input(
-            'Would you like to test the city with a different population?: ')
+                'Would you like to test the city with a different population?: '
+            )
 
             if response.lower() in ('y', 'yes'):
                 while True:
@@ -86,7 +104,8 @@ def get_lookup_city(us_city_list, world_city_list, us_min_max, world_min_max):
                         print('Invalid input, population should be numeric')
                     else:
                         temp_city.population = int(temp_pop)
-                        temp_city.population_density = temp_city.population / temp_city.area
+                        temp_city.population_density = (temp_city.population /
+                                                        temp_city.area)
                         break
 
                 results = decision_tree(temp_city, us_min_max)
