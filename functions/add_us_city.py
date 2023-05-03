@@ -18,6 +18,7 @@ from functions.get_new_state_name import get_new_state_name
 from functions.get_new_pop import get_new_pop
 from functions.get_new_area import get_new_area
 from functions.get_new_growth import get_new_growth
+from functions.get_new_rail import get_new_rail
 from functions.get_next_id import get_next_id
 
 
@@ -48,15 +49,16 @@ def add_us_city(conn, city_list):
 
     pop = get_new_pop()
     area = get_new_area()
-    density = area / pop
+    density = pop / area
     growth = get_new_growth()
+    rail = get_new_rail()
   
 
     # get the next id for the new city
     id_num = get_next_id(conn, name)
 
     # create a tuple of USCity to insert into the database
-    city_tuple = (id_num, name, state, pop, area, density, growth, "unknown")
+    city_tuple = (id_num, name, state, pop, area, density, growth, rail)
 
     query = """
         INSERT INTO us_city_class (id, name, state, population, area, population_density, growth_rate, rail_type)
@@ -74,5 +76,6 @@ def add_us_city(conn, city_list):
             print('Retrying...')
 
     new_city = USCity(*city_tuple)
+    print()
 
     return new_city

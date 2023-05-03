@@ -37,6 +37,7 @@ def create_us_city_class_table(conn):
 
 def insert_us_city_class_data(conn):
     """
+    Helper Function
     Function to insert data into the us_city_class table
     """
     """

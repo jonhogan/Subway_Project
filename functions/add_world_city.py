@@ -10,6 +10,7 @@ from functions.get_new_country import get_new_country
 from functions.get_new_pop import get_new_pop
 from functions.get_new_area import get_new_area
 from functions.get_new_growth import get_new_growth
+from functions.get_new_rail import get_new_rail
 from functions.get_next_id import get_next_id
 
 def add_world_city(conn, city_list):
@@ -46,13 +47,14 @@ def add_world_city(conn, city_list):
     pop = get_new_pop()
     area = get_new_area()
 
-    density = area / pop
+    density = pop / area
 
     growth = get_new_growth()
     id_num = get_next_id(conn, name)
+    rail = get_new_rail()
 
     # create a tuple of WorldCity to insert into the database
-    city_tuple =  (id_num, name, name, country, pop, area, density, growth, "unknown")
+    city_tuple =  (id_num, name, name, country, pop, area, density, growth, rail)
 
     query = """
         INSERT INTO world_city_class (id, name, name2, country, population, area, population_density, growth_rate, rail_type)
@@ -71,5 +73,6 @@ def add_world_city(conn, city_list):
             print('Retrying...')
 
     new_city = WorldCity(*city_tuple)
+    print()
 
     return new_city
