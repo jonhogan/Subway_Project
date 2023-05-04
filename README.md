@@ -10,11 +10,32 @@ SubTerrain City Recommender is a city evaluation and recommendation tool that he
 ## Installation
 
 1. Clone the repository or download the source code.
-2. Install the required dependencies:
-   1. pip install tk (tkinter package)
+2. To ensure the program works, it is recommended to use Python 3.11, though
+   it should work with Python 3.8 or newer
 3. Run the `main.py` script
+
+Newest version of the CMD line program can be found at: https://github.com/jonhogan/Subway_Project
 
 ## Usage
 
-1. Input city data by selecting a city from a pre-populated list or adding a new city. Edit the data using text boxes, dropdown menus, slider bars, or wheels.
-2. Analyze the suitability of a city for building a subway system. The application will rank the city based on predefined factors and display the results on a scale (e.g., 1-10, stars).
+1. Select if you want to view a city or add a city
+2. To view a city:
+   1. Select option 1
+   2. Enter city name
+   3. Enter state/country the state is in
+3. To add a city:
+   1. Select option 2
+   2. Enter Yes/No to the city being located in the US.
+   3. Enter city name
+      1. You can enter "Cancel" here to quit
+   4. Enter State (US), or Country
+   5. Enter details such as population, area, growth and if it has a
+      metro system
+
+## Developers
+
+- Timothy Lockhart
+- Ally Moore
+- Prakash Tamang
+- Paras Shahi
+- Jon Hogan
